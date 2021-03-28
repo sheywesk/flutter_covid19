@@ -41,10 +41,11 @@ abstract class _HomeControllerBase with Store {
   getInfoCountry({String countryName = "brazil"}) async {
     try {
       country = await api.getCountry(country: countryName);
+      print(country);
       print(country.name);
     } catch (e) {
       print(e.toString());
-     throw e;
+      throw e;
     }
   }
 

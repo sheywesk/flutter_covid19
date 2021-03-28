@@ -16,7 +16,7 @@ class Country extends World {
       int recovered})
       : super(
           cases: cases,
-          deaths: todayDeaths,
+          deaths: deaths,
           recovered: recovered,
         );
 

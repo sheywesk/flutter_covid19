@@ -1,6 +1,6 @@
 import 'package:covid19/controllers/home_controller.dart';
-import 'package:covid19/pages/home_page.dart';
 import 'package:covid19/repositories/covidapi_repository.dart';
+import 'package:covid19/ui/pages/home_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 
