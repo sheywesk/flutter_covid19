@@ -6,7 +6,7 @@ class CardWidget extends StatelessWidget {
   final String title;
   final String data;
 
-  const CardWidget({Key key, this.color, this.icon, this.title, this.data})
+  CardWidget({Key key, this.color, this.icon, this.title, this.data})
       : super(key: key);
 
   @override
@@ -18,7 +18,6 @@ class CardWidget extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            flex: 3,
             child: Container(
               padding: const EdgeInsets.all(8.0),
               height: 100.0,
@@ -42,7 +41,7 @@ class CardWidget extends StatelessWidget {
                     trailing: Text(
                       data,
                       style: whiteText.copyWith(
-                          fontWeight: FontWeight.w300, fontSize: 30.0),
+                          fontWeight: FontWeight.w300, fontSize: 22.0),
                     ),
                   ),
                 ],

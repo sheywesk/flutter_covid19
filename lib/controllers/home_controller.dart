@@ -15,7 +15,8 @@ abstract class _HomeControllerBase with Store {
     getInfoWorld();
     getInfoCountry();
   }
-
+  @observable
+  bool loading = false;
   @observable
   int currentIndex = 0;
 
@@ -30,23 +31,25 @@ abstract class _HomeControllerBase with Store {
 
   @action
   getInfoWorld() async {
+    loading = true;
     try {
       world = await api.getWorld();
     } catch (e) {
       throw e;
     }
+    loading = false;
   }
 
   @action
   getInfoCountry({String countryName = "brazil"}) async {
+    loading = true;
     try {
       country = await api.getCountry(country: countryName);
-      print(country);
-      print(country.name);
     } catch (e) {
       print(e.toString());
       throw e;
     }
+    loading = false;
   }
 
   @action

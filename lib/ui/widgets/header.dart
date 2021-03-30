@@ -1,50 +1,41 @@
-import 'package:covid19/ui/widgets/dialog_widget.dart';
+import 'package:covid19/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  final String title;
-  final bool isCountry;
-  final String url;
-  Header(this.title, {this.isCountry = false, this.url = ''});
 
   final TextStyle whiteText = TextStyle(color: Colors.white);
   @override
   Widget build(BuildContext context) {
+   
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 50.0, 0, 32.0),
+      padding: const EdgeInsets.fromLTRB(0, 5.0, 0, 16.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20.0),
           bottomRight: Radius.circular(20.0),
         ),
-        color: Colors.blue,
+      color: AppColor.primary,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ListTile(
-            title: Text(
-              title,
-              style: whiteText.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 20.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Container(
+              width: 200,
+              child: Image.asset("assets/images/logo.png"),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10,top: 10),
+            child: Text(
+                "Cuide da sua família. Cuide de quem você ama. Use máscara e álcool em gel. ",
+                style: TextStyle(fontSize: 16,color: Colors.white),),
+          ),
           const SizedBox(height: 5.0),
-          isCountry
-              ? GestureDetector(
-                  onTap: () => showDialog(
-                      context: context,
-                      builder: (_) {
-                        return DialogContent();
-                      }),
-                  child: Center(
-                      child: Image.network(
-                    url,
-                    width: 150,
-                  )),
-                )
-              : SizedBox()
+          
         ],
       ),
     );

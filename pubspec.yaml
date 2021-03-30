@@ -25,6 +25,7 @@ dependencies:
   flutter_modular: any
   flutter_mobx: ^1.0.1
   mobx: ^1.2.1+4
+  flutter_svg: ^0.19.3
   flutter:
     sdk: flutter
 
@@ -51,8 +52,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/logo.svg
+    - assets/images/logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
